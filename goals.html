@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - เป้าหมาย</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<nav>
+    <a href="index.html" id="nav-index">หน้าแรก</a>
+    <a href="profile.html" id="nav-profile">ประวัติ</a>
+    <a href="goals.html" id="nav-goals">เป้าหมาย</a>
+    <a href="portfolio.html" id="nav-portfolio">ผลงาน</a>
+    <a href="contact.html" id="nav-contact">ติดต่อ</a>
+</nav>
+<script>
+    // Simple script to highlight active nav
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    if(currentPage.includes("index")) document.getElementById("nav-index").classList.add("active");
+    if(currentPage.includes("profile")) document.getElementById("nav-profile").classList.add("active");
+    if(currentPage.includes("goals")) document.getElementById("nav-goals").classList.add("active");
+    if(currentPage.includes("portfolio")) document.getElementById("nav-portfolio").classList.add("active");
+    if(currentPage.includes("contact")) document.getElementById("nav-contact").classList.add("active");
+</script>
+
+    <div class="container animate-pop">
+        
+<h1 class="animate-fade-up">เป้าหมายทางการศึกษา 🎯</h1>
+<!-- แก้ไขตำแหน่งชื่อรูปภาพตรง src ด้านล่างนี้ -->
+<img src="Emblem_of_Thammasat_University.png" alt="TU Emblem" class="uni-emblem animate-float delay-1">
+<h2 class="animate-fade-up delay-1" style="color: #c41230;">มหาวิทยาลัยธรรมศาสตร์</h2>
+
+<div class="sop-box animate-fade-up delay-2">
+    <h3 style="text-align: left; margin-bottom: 0.5rem;">SOP (เหตุผลที่อยากเข้าศึกษา)</h3>
+    <p>ฉันมีความตั้งใจที่จะศึกษาต่อคณะพยาบาลศาสตร์ เพราะอยากนำความรู้และความสามารถของตนเองไปช่วยเหลือและดูแลผู้อื่น ฉันเป็นคนที่ชอบเรียนรู้ ค้นคว้า และสนใจเกี่ยวกับร่างกายและสุขภาพของมนุษย์ จึงมองว่าวิชาชีพพยาบาลเป็นอาชีพที่เหมาะกับตัวฉัน</p>
+    <p style="margin-top: 10px;">เป้าหมายของฉันคือการเป็นพยาบาลที่สามารถดูแลผู้ป่วยด้วยความเอาใจใส่ และนำความรู้ที่มีไปสร้างประโยชน์ให้กับผู้ป่วย ครอบครัว และสังคม</p>
+</div>
+
+<div class="why-box animate-fade-up delay-3" style="border-color: #ffd700; background: #fffff0;">
+    <h3 style="text-align: left; margin-bottom: 0.5rem; color: #daa520;">ความเหมาะสมและเป้าหมายในอนาคต</h3>
+    <p>เลือกมหาวิทยาลัยธรรมศาสตร์ เพราะเป็นมหาวิทยาลัยที่มีสภาพแวดล้อมและการเรียนรู้ที่ช่วยพัฒนานักศึกษาให้มีทั้งความรู้ ทักษะ และความรับผิดชอบต่อสังคม หากได้รับโอกาสเข้าศึกษา จะตั้งใจเรียนและพัฒนาตนเองอย่างเต็มที่ เพื่อก้าวไปสู่การเป็นพยาบาลที่มีความรู้ ความสามารถ และมีจิตใจที่พร้อมดูแลผู้อื่น</p>
+</div>
+
+    </div>
+</body>
+</html>

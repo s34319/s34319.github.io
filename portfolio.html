@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - ผลงาน</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<nav>
+    <a href="index.html" id="nav-index">หน้าแรก</a>
+    <a href="profile.html" id="nav-profile">ประวัติ</a>
+    <a href="goals.html" id="nav-goals">เป้าหมาย</a>
+    <a href="portfolio.html" id="nav-portfolio">ผลงาน</a>
+    <a href="contact.html" id="nav-contact">ติดต่อ</a>
+</nav>
+<script>
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    if(currentPage.includes("index")) document.getElementById("nav-index").classList.add("active");
+    if(currentPage.includes("profile")) document.getElementById("nav-profile").classList.add("active");
+    if(currentPage.includes("goals")) document.getElementById("nav-goals").classList.add("active");
+    if(currentPage.includes("portfolio")) document.getElementById("nav-portfolio").classList.add("active");
+    if(currentPage.includes("contact")) document.getElementById("nav-contact").classList.add("active");
+</script>
+
+    <div class="container animate-pop">
+        
+<h1 class="animate-fade-up">ผลงานและกิจกรรม 🏆</h1>
+<div class="gallery">
+    <!-- เน้นภาพเกียรติบัตรโดยใช้ class cert-img -->
+    <img src="ฐิติกร สุขเหลือง.jpg" alt="Certificate" class="animate-fade-up delay-1 cert-img" title="เกียรติบัตร">
+    
+    <img src="S__42901515_0.jpg" alt="Work 2" class="animate-fade-up delay-2">
+    <img src="S__42901516_0.jpg" alt="Work 3" class="animate-fade-up delay-3">
+    <img src="S__42901517_0.jpg" alt="Work 4" class="animate-fade-up delay-4">
+</div>
+
+<div class="desc-box animate-fade-up delay-4">
+    <strong style="color: #e88fa1; font-size: 1.2rem;">เข้าร่วม "โครงการส่งเสริมจิตอาสาในการดูแลและอำนวยความสะดวกผู้บริจาคโลหิตภายหลังการบริจาค"</strong><br><br>
+    เพื่อมีส่วนร่วมในการยกระดับคุณภาพงานบริการโลหิต ปฏิบัติหน้าที่ดูแล ต้อนรับ และอำนวยความสะดวกให้แก่ผู้เข้าร่วมบริจาคโลหิตให้ได้รับความปลอดภัย 🩸💖
+</div>
+
+    </div>
+</body>
+</html>
