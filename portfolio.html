@@ -1,47 +1,222 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - ผลงาน</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - ผลงาน</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap');
+
+        :root {
+            --bg-color: #ff6700;
+            --primary-color: #ffb6c1;
+            --text-color: #ff5311;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: radial-gradient(#ffced6 2px, transparent 2px);
+            background-size: 40px 40px;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            backdrop-filter: blur(5px);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .animate-fade-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        .animate-pop {
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 30px;
+            box-shadow: 0 15px 35px rgba(255, 182, 193, 0.15);
+            flex-grow: 1;
+            position: relative;
+        }
+
+        .container::before {
+            content: '✨';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            font-size: 2rem;
+            animation: float 3s infinite;
+        }
+
+        .container::after {
+            content: '🌸';
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            font-size: 2rem;
+            animation: float 3s infinite reverse;
+        }
+
+        h1 {
+            color: #e88fa1;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        /* Portfolio Gallery - 2 Columns */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            z-index: 10;
+            box-shadow: 0 15px 30px rgba(255, 182, 193, 0.4);
+        }
+
+        /* Certificate Top Image */
+        .cert-img {
+            grid-column: 1 / -1;
+            height: auto !important;
+            max-height: 500px;
+            object-fit: contain !important;
+            border: 4px solid #ffb6c1;
+            background-color: #fff;
+            padding: 10px;
+        }
+
+        .desc-box {
+            background: #fdf5e6;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            line-height: 1.6;
+            border-bottom: 5px solid #ffd700;
+        }
+    </style>
 </head>
 <body>
-    
+    
 <nav>
-    <a href="index.html" id="nav-index">หน้าแรก</a>
-    <a href="profile.html" id="nav-profile">ประวัติ</a>
-    <a href="goals.html" id="nav-goals">เป้าหมาย</a>
-    <a href="portfolio.html" id="nav-portfolio">ผลงาน</a>
-    <a href="contact.html" id="nav-contact">ติดต่อ</a>
+    <a href="index.html" id="nav-index">หน้าแรก</a>
+    <a href="profile.html" id="nav-profile">ประวัติ</a>
+    <a href="goals.html" id="nav-goals">เป้าหมาย</a>
+    <a href="portfolio.html" id="nav-portfolio">ผลงาน</a>
+    <a href="contact.html" id="nav-contact">ติดต่อ</a>
 </nav>
 <script>
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
-    if(currentPage.includes("index")) document.getElementById("nav-index").classList.add("active");
-    if(currentPage.includes("profile")) document.getElementById("nav-profile").classList.add("active");
-    if(currentPage.includes("goals")) document.getElementById("nav-goals").classList.add("active");
-    if(currentPage.includes("portfolio")) document.getElementById("nav-portfolio").classList.add("active");
-    if(currentPage.includes("contact")) document.getElementById("nav-contact").classList.add("active");
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    if(currentPage.includes("index")) document.getElementById("nav-index").classList.add("active");
+    if(currentPage.includes("profile")) document.getElementById("nav-profile").classList.add("active");
+    if(currentPage.includes("goals")) document.getElementById("nav-goals").classList.add("active");
+    if(currentPage.includes("portfolio")) document.getElementById("nav-portfolio").classList.add("active");
+    if(currentPage.includes("contact")) document.getElementById("nav-contact").classList.add("active");
 </script>
 
-    <div class="container animate-pop">
-        
-<h1 class="animate-fade-up">ผลงานและกิจกรรม 🏆</h1>
-<div class="gallery">
-    <!-- เน้นภาพเกียรติบัตรโดยใช้ class cert-img -->
-    <img src="ฐิติกร สุขเหลือง.jpg" alt="Certificate" class="animate-fade-up delay-1 cert-img" title="เกียรติบัตร">
-    
-    <img src="S__42901515_0.jpg" alt="Work 2" class="animate-fade-up delay-2">
-    <img src="S__42901516_0.jpg" alt="Work 3" class="animate-fade-up delay-3">
-    <img src="S__42901517_0.jpg" alt="Work 4" class="animate-fade-up delay-4">
-    <img src="S__42901513.jpg" alt="Work 4" class="animate-fade-up delay-4">
-</div>
+    <div class="container animate-pop">
+        <h1 class="animate-fade-up">ผลงานและกิจกรรม 🏆</h1>
+        <div class="gallery">
+            <!-- 1. เกียรติบัตร (แถวบนสุด กว้างเต็ม) -->
+            <img src="ฐิติกร สุขเหลือง.jpg" alt="Certificate" class="animate-fade-up delay-1 cert-img" title="เกียรติบัตร">
+            
+            <!-- 2. ซ้ายบน -->
+            <img src="S__42901513.jpg" alt="Work 1" class="animate-fade-up delay-2">
+            
+            <!-- 3. ขวาบน -->
+            <img src="S__42901517_0.jpg" alt="Work 2" class="animate-fade-up delay-3">
+            
+            <!-- 4. ซ้ายล่าง -->
+            <img src="S__42901515_0.jpg" alt="Work 3" class="animate-fade-up delay-4">
+            
+            <!-- 5. ขวาล่าง -->
+            <img src="S__42901516_0.jpg" alt="Work 4" class="animate-fade-up delay-4">
+        </div>
 
-<div class="desc-box animate-fade-up delay-4">
-    <strong style="color: #e88fa1; font-size: 1.2rem;">เข้าร่วม "โครงการส่งเสริมจิตอาสาในการดูแลและอำนวยความสะดวกผู้บริจาคโลหิตภายหลังการบริจาค"</strong><br><br>
-    เพื่อมีส่วนร่วมในการยกระดับคุณภาพงานบริการโลหิต ปฏิบัติหน้าที่ดูแล ต้อนรับ และอำนวยความสะดวกให้แก่ผู้เข้าร่วมบริจาคโลหิตให้ได้รับความปลอดภัย 🩸💖
-</div>
-
-    </div>
+        <div class="desc-box animate-fade-up delay-4">
+            <strong style="color: #e88fa1; font-size: 1.2rem;">เข้าร่วม "โครงการส่งเสริมจิตอาสาในการดูแลและอำนวยความสะดวกผู้บริจาคโลหิตภายหลังการบริจาค"</strong><br><br>
+            เพื่อมีส่วนร่วมในการยกระดับคุณภาพงานบริการโลหิต ปฏิบัติหน้าที่ดูแล ต้อนรับ และอำนวยความสะดวกให้แก่ผู้เข้าร่วมบริจาคโลหิตให้ได้รับความปลอดภัย 🩸💖
+        </div>
+    </div>
 </body>
 </html>
