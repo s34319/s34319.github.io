@@ -1,0 +1,43 @@
+/* Portfolio */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* ล็อคให้แบ่ง 2 คอลัมน์เท่ากัน */
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.gallery img {
+    width: 100%;
+    height: 250px; /* ปรับความสูงคงที่เพื่อให้รูปในตาราง 4 ช่องเท่ากันสวยงาม */
+    object-fit: cover;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: 0 15px 30px rgba(255, 182, 193, 0.4);
+}
+
+.desc-box {
+    background: #fdf5e6;
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 1.6;
+    border-bottom: 5px solid #ffd700;
+}
+
+/* Certificate image highlight */
+.cert-img {
+    grid-column: 1 / -1; /* สั่งให้รูปเกียรติบัตรยืดกินพื้นที่เต็ม 2 คอลัมน์ด้านบน */
+    height: auto !important;
+    max-height: 500px;
+    object-fit: contain !important;
+    border: 4px solid #ffb6c1;
+    background-color: #fff;
+    padding: 10px;
+}
