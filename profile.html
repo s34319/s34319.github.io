@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - ประวัติ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<nav>
+    <a href="index.html" id="nav-index">หน้าแรก</a>
+    <a href="profile.html" id="nav-profile">ประวัติ</a>
+    <a href="goals.html" id="nav-goals">เป้าหมาย</a>
+    <a href="portfolio.html" id="nav-portfolio">ผลงาน</a>
+    <a href="contact.html" id="nav-contact">ติดต่อ</a>
+</nav>
+<script>
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    if(currentPage.includes("index")) document.getElementById("nav-index").classList.add("active");
+    if(currentPage.includes("profile")) document.getElementById("nav-profile").classList.add("active");
+    if(currentPage.includes("goals")) document.getElementById("nav-goals").classList.add("active");
+    if(currentPage.includes("portfolio")) document.getElementById("nav-portfolio").classList.add("active");
+    if(currentPage.includes("contact")) document.getElementById("nav-contact").classList.add("active");
+</script>
+
+    <div class="container animate-pop">
+        
+<h1 class="animate-fade-up">ข้อมูลส่วนตัว 👩🏻‍⚕️</h1>
+<ul class="profile-list">
+    <li class="animate-fade-up delay-1"><span class="label">ชื่อ:</span> นางสาวฐิติกร สุขเหลือง</li>
+    <li class="animate-fade-up delay-2"><span class="label">วันเกิด:</span> 29 มิถุนายน 2551</li>
+    <li class="animate-fade-up delay-3"><span class="label">ประวัติการศึกษา:</span><br>
+        &nbsp;&nbsp;🏫 ระดับประถมศึกษา: โรงเรียนชุมชนบ้านหัวกุญแจ (เกรดเฉลี่ย 3.85)<br>
+        &nbsp;&nbsp;🏫 ระดับมัธยมศึกษาตอนต้น: โรงเรียนบ้านบึง"อุตสาหกรรมนุเคราะห์" (เกรดเฉลี่ย 3.82)<br>
+        &nbsp;&nbsp;🏫 ระดับมัธยมศึกษาตอนปลาย: โรงเรียนบ้านบึง"อุตสาหกรรมนุเคราะห์" (เกรดเฉลี่ย 3.71)
+    </li>
+    <li class="animate-fade-up delay-4"><span class="label">งานอดิเรก:</span> ชอบดูหนังฟังเพลง 🎬🎵</li>
+    <li class="animate-fade-up delay-4"><span class="label">สิ่งที่ชอบทำ:</span> ชอบทำขนม 🧁✨</li>
+</ul>
+
+    </div>
+</body>
+</html>
